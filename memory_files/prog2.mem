@@ -1,0 +1,12 @@
+// Timer
+
+FF      // 00: INPUT A
+
+        // ====loop====
+EA      // 01: PRINT A
+FC 64   // 02: WAIT 100*10ms
+7A      // 04: DEC A
+CA 01   // 05: JRNZ A, loop
+
+EA      // 07: PRINT A
+FD      // 08: HALT

@@ -1,0 +1,26 @@
+// N-th Fibonacci Number
+
+FF      // 00: INPUT A
+E3      // 01: R3 = A
+
+D0 00   // 02: R0 = 0
+D1 01   // 04: R1 = 1
+
+        // ====loop====
+B3 11   // 06: JRZ R3, out
+73      // 08: DEC R3
+
+F0      // 09: A = R0
+01      // 0A: ADD A, R1
+E2      // 0B: R2 = A
+F1      // 0C: A = R1
+E0      // 0D: R0 = A
+F2      // 0E: A = R2
+E1      // 0F: R1 = A
+
+96 06   // 10: JMP loop
+
+        // ====out====
+F0      // 11: A = R0
+EA      // 12: PRINT A
+FD      // 13: HALT

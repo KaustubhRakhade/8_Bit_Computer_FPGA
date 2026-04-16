@@ -1,0 +1,27 @@
+// Euclid's Division Algorithm
+
+FF      // 00: INPUT A
+E1      // 01: R1 = A
+FF      // 02: INPUT A
+E2      // 03: R2 = A
+
+        // ====loop====
+F1      // 04: A = R1
+A2      // 05: CMP A, R2
+
+A8 13   // 06: JEQ out
+AC 0F   // 08: JGT agtr
+
+F2      // 0A: A = R2
+21      // 0B: SUB A, R1
+E2      // 0C: R2 = A
+96 04   // 0D: JMP loop
+
+        // ====agtr====
+22      // 0F: SUB A, R2
+E1      // 10: R1 = A
+96 04   // 11: JMP loop
+
+        // ====out====
+EA      // 13: PRINT A
+FD      // 14: HALT
